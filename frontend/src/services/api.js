@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const API = axios.create({
-  baseURL: 'https://taskmatetodo.onrender.com' // Replace with your real Render URL
+  baseURL: 'https://taskmate-backend.onrender.com/api' // Replace with your actual Render backend URL
 });
 
 export default API;
