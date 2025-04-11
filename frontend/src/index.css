@@ -1,0 +1,239 @@
+/* Global */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(-45deg, #1e3c72, #2a5298, #5f72bd, #9b59b6);
+  background-size: 400% 400%;
+  animation: gradientLoop 15s ease infinite;
+}
+
+@keyframes gradientLoop {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+
+.container {
+  width: 100%;
+  max-width: 600px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  color: white;
+}
+
+/* Task Form */
+.task-form input,
+.task-form textarea,
+.task-form button {
+  width: 100%;
+  margin-bottom: 16px;
+  padding: 12px 15px;
+  font-size: 16px;
+  border: none;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  outline: none;
+  transition: background 0.3s ease;
+}
+
+.task-form input::placeholder,
+.task-form textarea::placeholder {
+  color: #ddd;
+}
+
+.task-form input:focus,
+.task-form textarea:focus {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.task-form button {
+  background: linear-gradient(135deg, #067029, #15af50);
+  color: black;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.task-form button:hover {
+  transform: translateY(-2px);
+}
+
+.task-list {
+  margin-top: 20px;
+}
+
+.task-item {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(8px);
+  padding: 16px;
+  border-radius: 14px;
+  margin-bottom: 16px;
+  color: white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: background 0.3s ease;
+}
+
+.task-item.completed {
+  opacity: 0.6;
+  text-decoration: line-through;
+}
+
+.task-buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.task-buttons button {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  background: #ffffff22;
+  color: white;
+  transition: background 0.3s ease;
+}
+
+.task-buttons button:hover {
+  background: #ffffff44;
+}
+
+.search-filter {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.search-filter input {
+  padding: 10px;
+  border-radius: 12px;
+  border: none;
+  font-size: 16px;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+}
+
+.search-filter input::placeholder {
+  color: #ccc;
+}
+
+.search-filter button {
+  padding: 10px;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #d63c41, #de2525);
+  color: black;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 8px;
+}
+
+.top-section {
+  display: flex;
+  flex-direction: column; /* change to row for desktop later */
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+/* Responsive Container */
+.container {
+  width: 90%;
+  max-width: 700px;
+  margin: auto;
+  padding: 20px;
+  border-radius: 16px;
+}
+
+/* Stack items vertically by default (mobile-first) */
+.top-section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+/* Make form and filters side-by-side on large screens */
+@media (min-width: 768px) {
+  .top-section {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+
+  .task-form,
+  .search-filter {
+    flex: 1;
+  }
+
+  .task-form {
+    margin-right: 20px;
+  }
+}
+
+/* Make task items stack well */
+.task-item {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.task-item h3 {
+  font-size: 1.2rem;
+}
+
+/* Responsive text */
+.task-buttons button {
+  font-size: 0.9rem;
+  padding: 8px 10px;
+}
+.task-form input,
+.task-form textarea {
+  font-size: 0.95rem;
+}
+
+.search-filter input {
+  font-size: 0.95rem;
+}
+
+
+/* Ensure inputs and buttons don't overflow */
+input,
+textarea,
+button {
+  width: 100%;
+  box-sizing: border-box;
+  max-width: 100%;
+}
+
+/* Search & Filter fields spacing fix */
+.search-filter input,
+.search-filter button {
+  margin-bottom: 10px;
+  border-radius: 10px;
+}
+
+/* Prevent long text/content from breaking layout */
+.task-item {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+/* Optional: make textareas auto-resize */
+textarea {
+  resize: vertical;
+  min-height: 80px;
+}
