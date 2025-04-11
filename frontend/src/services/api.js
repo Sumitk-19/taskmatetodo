@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const API = axios.create({
-  baseURL: 'http://localhost:5000/api',
+  baseURL: 'https://taskmatetodo.onrender.com' // Replace with your real Render URL
 });
 
 export default API;
